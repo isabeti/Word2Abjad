@@ -26,11 +26,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG", 0)))
-
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(",")
+API_VERSION = os.getenv("API_VERSION", "v1")
 
 
 # Application definition
+LOCAL_APPS = []
+THIRD_PARTY_APPS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    *LOCAL_APPS,
+    *THIRD_PARTY_APPS,
 ]
 
 MIDDLEWARE = [
