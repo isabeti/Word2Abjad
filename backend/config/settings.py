@@ -31,7 +31,9 @@ API_VERSION = os.getenv("API_VERSION", "v1")
 
 
 # Application definition
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'abjad_calculator.apps.AbjadCalculatorConfig',
+]
 THIRD_PARTY_APPS = []
 
 INSTALLED_APPS = [
