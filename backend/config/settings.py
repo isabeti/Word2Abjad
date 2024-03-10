@@ -34,7 +34,9 @@ API_VERSION = os.getenv("API_VERSION", "v1")
 LOCAL_APPS = [
     'abjad_calculator.apps.AbjadCalculatorConfig',
 ]
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'rest_framework',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
