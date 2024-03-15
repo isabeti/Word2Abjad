@@ -1,9 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
+from rest_framework.status import HTTP_400_BAD_REQUEST
 
 from .forms import AbjadCalculateForm
-from . import dictionary
 from .utils import abjad_clalc_FA, abjad_clalc_EN
 
 # Create your views here.
@@ -19,5 +18,5 @@ class AbjadCalculateFA(APIView):
             else:
                 data = abjad_clalc_EN(word)
             return Response(data)
-        return Response(form.errors)
+        return Response(form.errors, status=HTTP_400_BAD_REQUEST)
     
