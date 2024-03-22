@@ -18,7 +18,7 @@ class AbjadCalculateForm(forms.Form):
             cleaned_data['is_persian'] = True
 
         for i in word:
-            if i not in dictionary.abjad_hebrew or i not in dictionary.abjad_english or i not in dictionary.abjad_simple:
+            if i.lower() not in dictionary.abjad_hebrew or i.lower() not in dictionary.abjad_english or i.lower() not in dictionary.abjad_simple:
                 error_en = True
                 break
 

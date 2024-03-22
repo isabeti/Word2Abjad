@@ -74,13 +74,13 @@ def abjad_clalc_EN(word):
         english_letters.append(i)
         simple_letters.append(i)
 
-        list_hebrew_numbers.append(dictionary.abjad_hebrew[i])
-        list_english_numbers.append(dictionary.abjad_english[i])
-        list_simple_numbers.append(dictionary.abjad_simple[i])
+        list_hebrew_numbers.append(dictionary.abjad_hebrew[i.lower()])
+        list_english_numbers.append(dictionary.abjad_english[i.lower()])
+        list_simple_numbers.append(dictionary.abjad_simple[i.lower()])
 
-        hebrew_number += dictionary.abjad_hebrew[i]
-        english_number += dictionary.abjad_english[i]
-        simple_number += dictionary.abjad_simple[i]
+        hebrew_number += dictionary.abjad_hebrew[i.lower()]
+        english_number += dictionary.abjad_english[i.lower()]
+        simple_number += dictionary.abjad_simple[i.lower()]
 
     box_data = {
         'hebrew': {'word': new_word, 'hebrew_number': hebrew_number, 'letters': hebrew_letters, 'list_hebrew_numbers': list_hebrew_numbers},
